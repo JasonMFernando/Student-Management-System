@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Create Student</h2>
+<mat-dialog-content>
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput type="date" formControlName="dateOfBirth" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Role Type</mat-label>
+        <mat-select formControlName="roleType">
+        <mat-option *ngFor="let role of roles" [value]="role.roleID">
+            {{ role.roleName }}
+        </mat-option>
+        </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let status of statuses" [value]="status.statusID">
+            {{ status.statusName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>      
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-button color="primary" (click)="onSubmit()">Create</button>
+</mat-dialog-actions>

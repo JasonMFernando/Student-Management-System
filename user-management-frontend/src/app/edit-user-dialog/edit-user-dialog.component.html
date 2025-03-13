@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Edit User</h2>
+<mat-dialog-content>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Leave blank to keep current password" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput formControlName="dateOfBirth" type="date" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Role Type</mat-label>
+        <mat-select formControlName="roleType">
+        <mat-option *ngFor="let role of roles" [value]="role.roleID">{{ role.roleName }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+        <mat-option *ngFor="let status of statuses" [value]="status.statusID">{{ status.statusName }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button mat-button color="primary" (click)="onSubmit()" >Update</button>
+  </mat-dialog-actions>

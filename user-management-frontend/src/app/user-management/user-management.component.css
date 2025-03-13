@@ -1,0 +1,36 @@
+.container {
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+
+.edit-button {
+    color: yellow ;
+}
+
+th.mat-header-cell {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search-box {
+    width: 250px;
+}
+
+
+
+  
