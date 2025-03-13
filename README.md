@@ -1,2 +1,2 @@
 # Student-Management-System
-A system for managing students, roles, and statuses with secure JWT authentication. Users can create, edit, and update student records, roles, and statuses while ensuring authorized access to APIs.
+This project is designed to manage students efficiently, allowing the creation, editing, and management of roles, statuses, and student records. All API endpoints are secured with JWT authentication, ensuring only authorized access. The system enables administrators to add, update, and manage roles and statuses, providing a structured approach to student data management.
